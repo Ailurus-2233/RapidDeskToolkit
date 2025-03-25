@@ -1,0 +1,80 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>disable</Nullable>
+        <RootNamespace>RapidDeskToolkit</RootNamespace>
+        <LangVersion>default</LangVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Avalonia" Version="11.2.5" />
+      <PackageReference Include="Avalonia.Desktop" Version="11.2.5" />
+      <PackageReference Include="Avalonia.Diagnostics" Version="11.2.5" />
+      <PackageReference Include="Avalonia.Svg" Version="11.2.0.2" />
+      <PackageReference Include="Avalonia.Xaml.Behaviors" Version="11.2.0.14" />
+      <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+      <PackageReference Include="Microsoft.Data.Sqlite" Version="9.0.3" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Update="Resources\Language.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Langurage.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Language.zh.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Language.zh.Designer.cs</LastGenOutput>
+        <DependentUpon>Language.resx</DependentUpon>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Language.en.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Language.en.Designer.cs</LastGenOutput>
+        <DependentUpon>Language.resx</DependentUpon>
+      </EmbeddedResource>
+      <EmbeddedResource Remove="Desktop\**" />
+      <EmbeddedResource Remove="Models\MVVM\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Resources\Language.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Language.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Language.zh.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Language.zh.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Language.en.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Language.en.resx</DependentUpon>
+      </Compile>
+      <Compile Remove="Desktop\**" />
+      <Compile Remove="Models\MVVM\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <AvaloniaXaml Remove="Desktop\**" />
+      <AvaloniaXaml Remove="Models\MVVM\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <AdditionalFiles Remove="Desktop\**" />
+      <AdditionalFiles Remove="Models\MVVM\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <AvaloniaResource Remove="Desktop\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Desktop\**" />
+      <None Remove="Models\MVVM\**" />
+    </ItemGroup>
+
+</Project>

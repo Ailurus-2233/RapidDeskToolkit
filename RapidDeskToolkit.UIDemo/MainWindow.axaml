@@ -1,0 +1,55 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:uiDemo="clr-namespace:RapidDeskToolkit.UIDemo"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="RapidDeskToolkit.UIDemo.MainWindow"
+        x:DataType="uiDemo:MainWindowViewModel"
+        Title="{Binding Header}"
+        Icon="avares://RapidDeskToolkit.UIDemo/Resources/favicon.ico">
+    <!-- Loaded 事件 -->
+    <Interaction.Behaviors>
+        <EventTriggerBehavior EventName="Loaded">
+            <InvokeCommandAction Command="{Binding OnLoadedCommand}" />
+        </EventTriggerBehavior>
+    </Interaction.Behaviors>
+    <Design.DataContext>
+        <uiDemo:MainWindowViewModel />
+    </Design.DataContext>
+    <Window.Styles>
+        <Style Selector="ListBoxItem">
+            <Setter Property="CornerRadius" Value="3" />
+        </Style>
+        <Style Selector="Border.Shadow">
+            <Setter Property="CornerRadius" Value="5" />
+            <Setter Property="Padding" Value="5" />
+            <Setter Property="Theme" Value="{StaticResource CardBorder}" />
+        </Style>
+    </Window.Styles>
+
+    <Grid RowDefinitions="40, *">
+        <Border Classes="Shadow" Margin="5,5,5,0">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="{Binding Header}" Margin="5 0 0 0 " />
+            </StackPanel>
+        </Border>
+        <Grid Grid.Row="1" ColumnDefinitions="300, *">
+            <Border Classes="Shadow" Margin="5">
+                <ScrollViewer>
+                    <ListBox ItemsSource="{Binding Pages}"
+                             SelectedItem="{Binding SelectedPage}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Title}" />
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </ScrollViewer>
+            </Border>
+            <Border Grid.Column="1" Classes="Shadow" Margin="0,5,5,5">
+                <UserControl Content="{Binding SelectedControl }" Margin="5" />
+            </Border>
+        </Grid>
+    </Grid>
+</Window>

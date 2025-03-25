@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <LangVersion>default</LangVersion>
+        <TargetFramework>net8.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Avalonia" Version="11.2.5" />
+      <PackageReference Include="Irihi.Ursa" Version="1.9.0" />
+      <PackageReference Include="Irihi.Ursa.Themes.Semi" Version="1.9.0" />
+      <PackageReference Include="Semi.Avalonia" Version="11.2.1.5" />
+      <PackageReference Include="Semi.Avalonia.ColorPicker" Version="11.2.1.5" />
+      <PackageReference Include="Semi.Avalonia.DataGrid" Version="11.2.1.5" />
+      <PackageReference Include="Semi.Avalonia.TreeDataGrid" Version="11.0.10.1" />
+    </ItemGroup>
+
+</Project>
