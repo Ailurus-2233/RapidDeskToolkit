@@ -97,6 +97,7 @@ public static class AssetHelper
         }
         catch (HttpRequestException)
         {
+            ArgumentNullException.ThrowIfNull(uri);
             throw new AssetNotFoundException(uri);
         }
     }

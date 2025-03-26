@@ -1,4 +1,4 @@
-﻿namespace A6ToolKits.Starter;
+﻿namespace RapidDeskToolkit.Common.Bootstrapper;
 
 /// <summary>
 ///     启动器接口

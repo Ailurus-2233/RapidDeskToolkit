@@ -18,7 +18,13 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-    <data name="OverviewPageTitle" xml:space="preserve">
+    <data name="OverviewPageName" xml:space="preserve">
         <value>Overview</value>
+    </data>
+    <data name="ButtonPageName" xml:space="preserve">
+        <value>Button</value>
+    </data>
+    <data name="WindowTitleName" xml:space="preserve">
+        <value>UIDemo</value>
     </data>
 </root>

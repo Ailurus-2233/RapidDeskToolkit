@@ -2,7 +2,7 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 
-namespace RapidDeskToolkit.ApplicationController;
+namespace RapidDeskToolkit.Common.ApplicationController;
 
 /// <summary>
 ///     Avalonia 生命周期扩展，为了拆分始化过程中的一部分操作
@@ -45,7 +45,7 @@ public static class DesktopLifetimeExtension
     ///     返回值无效
     /// </exception>
     public static ClassicDesktopStyleApplicationLifetime PrepareLifetime(
-        AppBuilder builder,
+        AppBuilder? builder,
         string[] args,
         Action<IClassicDesktopStyleApplicationLifetime>? lifetimeBuilder)
     {

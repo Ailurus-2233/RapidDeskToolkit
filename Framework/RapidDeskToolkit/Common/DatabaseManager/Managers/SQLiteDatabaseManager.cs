@@ -1,10 +1,10 @@
 ﻿using System.Linq.Expressions;
-using A6ToolKits.Database.DataModels;
 using Microsoft.Data.Sqlite;
 using RapidDeskToolkit.Common.DatabaseManager.Attributes;
 using RapidDeskToolkit.Common.DatabaseManager.Configs;
 using RapidDeskToolkit.Common.DatabaseManager.DataConverters;
 using RapidDeskToolkit.Common.DatabaseManager.Exceptions;
+using RapidDeskToolkit.Common.DatabaseManager.Models;
 
 namespace RapidDeskToolkit.Common.DatabaseManager.Managers;
 
@@ -167,7 +167,7 @@ public class SQLiteDatabaseManager : DatabaseManagerBase
         connection.Open();
         using var command = connection.CreateCommand();
         var data = Activator.CreateInstance(typeof(T)) as T;
-        command.CommandText = data.GenerateCreateTableCommand();
+        command.CommandText = data?.GenerateCreateTableCommand();
         command.ExecuteNonQuery();
     }
 

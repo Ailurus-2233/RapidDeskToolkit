@@ -25,7 +25,7 @@ public abstract class AssemblyHandlerBase : IAssemblyHandler
         AppDomain.CurrentDomain.AssemblyResolve += (_, args) =>
         {
             var assemblyName = $"{new AssemblyName(args.Name).Name}.dll";
-            Assembly assembly = null;
+            Assembly? assembly = null;
             foreach (var path in AssemblyPaths)
             {
                 var assemblyPath = Path.Combine(path, assemblyName);
@@ -36,10 +36,10 @@ public abstract class AssemblyHandlerBase : IAssemblyHandler
         };
     }
 
-    public Type LoadType(string type, string assemblyName = null)
+    public Type? LoadType(string type, string? assemblyName = null)
     {
         if (assemblyName == null) return Type.GetType(type);
-        Assembly assembly = null;
+        Assembly? assembly = null;
         foreach (var path in AssemblyPaths)
         {
             var assemblyPath = Path.Combine(path, assemblyName);

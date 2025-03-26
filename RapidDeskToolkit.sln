@@ -13,9 +13,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RapidDeskToolkit", "Framewo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RapidDeskToolkit.UIPackage", "Framework\RapidDeskToolkit.UIPackage\RapidDeskToolkit.UIPackage.csproj", "{D8B8F5A6-ABD6-46E1-84D5-36061CE983DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAvaloniaBase", "TestAvaloniaBase\TestAvaloniaBase.csproj", "{08362E07-55AA-4561-83C6-64FC56C47F42}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAvaloniaBase", "Application\TestAvaloniaBase\TestAvaloniaBase.csproj", "{08362E07-55AA-4561-83C6-64FC56C47F42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RapidDeskToolkit.UIDemo", "RapidDeskToolkit.UIDemo\RapidDeskToolkit.UIDemo.csproj", "{68F7BC98-37E2-4CD4-ABDD-E509808EE125}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RapidDeskToolkit.UIDemo", "Framework\RapidDeskToolkit.UIDemo\RapidDeskToolkit.UIDemo.csproj", "{68F7BC98-37E2-4CD4-ABDD-E509808EE125}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

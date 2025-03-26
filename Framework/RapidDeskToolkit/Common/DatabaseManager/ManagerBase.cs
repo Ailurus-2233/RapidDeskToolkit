@@ -1,5 +1,4 @@
 ﻿using System.Linq.Expressions;
-using A6ToolKits.Database.DataModels;
 using RapidDeskToolkit.Common.DatabaseManager.Exceptions;
 using RapidDeskToolkit.Common.DatabaseManager.Models;
 

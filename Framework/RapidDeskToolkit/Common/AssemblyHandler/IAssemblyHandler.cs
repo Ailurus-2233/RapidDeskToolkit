@@ -30,7 +30,7 @@ public interface IAssemblyHandler
     /// <returns>
     ///     返回加载的类型
     /// </returns>
-    Type LoadType(string type, string assemblyName = null);
+    Type? LoadType(string type, string? assemblyName = null);
 
     /// <summary>
     ///     获取所有程序集名称

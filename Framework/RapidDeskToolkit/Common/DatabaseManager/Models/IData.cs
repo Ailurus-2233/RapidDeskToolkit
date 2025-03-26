@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace A6ToolKits.Database.DataModels;
+namespace RapidDeskToolkit.Common.DatabaseManager.Models;
 
 /// <summary>
 ///     数据存储需要实现的读写接口接口

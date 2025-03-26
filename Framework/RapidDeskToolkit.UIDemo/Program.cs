@@ -1,23 +1,19 @@
 ﻿using Avalonia;
+using System;
 
 namespace RapidDeskToolkit.UIDemo;
 
-internal static class Program
+class Program
 {
-    private static readonly UIDemoBootstrapper Bootstrapper = new();
+    private static readonly Bootstrapper Bootstrapper = new();
+
     // Initialization code. Don't use any Avalonia, third-party APIs or any
     // SynchronizationContext-reliant code before AppMain is called: things aren't initialized
     // yet and stuff might break.
-    
     [STAThread]
-    public static void Main(string[] args)
-    {
-        Bootstrapper.Run(args);
-    }
+    public static void Main(string[]? args) => Bootstrapper.Run(args);
 
     // Avalonia configuration, don't remove; also used by visual designer.
-    public static AppBuilder BuildAvaloniaApp()
-    {
-        return Bootstrapper.InitialAppBuilder();
-    }
+    public static AppBuilder? BuildAvaloniaApp()
+        => Bootstrapper.InitialAppBuilder();
 }

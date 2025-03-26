@@ -1,8 +1,8 @@
 ﻿using System.Linq.Expressions;
 using System.Xml;
-using A6ToolKits.Database.DataModels;
 using RapidDeskToolkit.Common.DatabaseManager.DataConverters;
 using RapidDeskToolkit.Common.DatabaseManager.Exceptions;
+using RapidDeskToolkit.Common.DatabaseManager.Models;
 
 namespace RapidDeskToolkit.Common.DatabaseManager.Managers;
 

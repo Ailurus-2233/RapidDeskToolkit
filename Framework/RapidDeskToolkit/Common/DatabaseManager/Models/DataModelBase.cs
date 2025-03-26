@@ -1,6 +1,5 @@
 ﻿using System.Reflection;
 using System.Text;
-using A6ToolKits.Database.DataModels;
 using RapidDeskToolkit.Common.DatabaseManager.Attributes;
 using RapidDeskToolkit.Common.DatabaseManager.Exceptions;
 

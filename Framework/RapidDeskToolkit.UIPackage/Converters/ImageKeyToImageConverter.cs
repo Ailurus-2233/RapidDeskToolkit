@@ -13,7 +13,7 @@ public class ImageKeyToImageConverter : IValueConverter
         return value is string key ? Application.Current?.FindResource(key) as IImage : null;
     }
 
-    public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
+    public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
         throw new NotImplementedException();
     }

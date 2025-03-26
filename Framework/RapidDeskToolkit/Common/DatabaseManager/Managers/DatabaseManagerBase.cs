@@ -1,5 +1,5 @@
 ﻿using System.Linq.Expressions;
-using A6ToolKits.Database.DataModels;
+using RapidDeskToolkit.Common.DatabaseManager.Models;
 
 namespace RapidDeskToolkit.Common.DatabaseManager.Managers;
 

@@ -1,5 +1,4 @@
-﻿using RapidDeskToolkit.Models.Events;
-using RapidDeskToolkit.Models.Exceptions;
+﻿using RapidDeskToolkit.Models.Exceptions;
 
 namespace RapidDeskToolkit.Common.ResourceLoader.Exceptions;
 
@@ -12,5 +11,5 @@ namespace RapidDeskToolkit.Common.ResourceLoader.Exceptions;
 /// <param name="details">
 ///     详细信息
 /// </param>
-public class AssetNotFoundException(Uri uri, string details = null) :
+public class AssetNotFoundException(Uri uri, string details ="") :
     FrameworkExceptionBase(ErrorCode.InvalidArgument, $"Resource [{uri}] not found", details);

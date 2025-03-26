@@ -12,9 +12,8 @@ public class DataNotFoundException : FrameworkExceptionBase
     /// </summary>
     /// <param name="information">错误信息。</param>
     /// <param name="details">错误详情。</param>
-    public DataNotFoundException(string information, string? details = null)
+    public DataNotFoundException(string information, string details = "")
         : base(ErrorCode.RuntimeError, information, details)
     {
     }
 }
-

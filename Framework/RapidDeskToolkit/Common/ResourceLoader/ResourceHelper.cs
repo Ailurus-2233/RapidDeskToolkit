@@ -18,7 +18,7 @@ public static class ResourceHelper
     /// <returns>
     ///     返回图片
     /// </returns>
-    public static IImage LoadImage(string key)
+    public static IImage? LoadImage(string key)
     {
         return Application.Current?.FindResource(key) as IImage;
     }
@@ -39,7 +39,7 @@ public static class ResourceHelper
     /// <exception cref="Exception">
     ///     无法加载资源时抛出异常
     /// </exception>
-    public static T LoadResource<T>(string key) where T : class
+    public static T? LoadResource<T>(string key) where T : class
     {
         var app = Application.Current;
         var resource = app?.FindResource(key) as T;

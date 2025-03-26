@@ -1,8 +1,8 @@
 ﻿using System.Linq.Expressions;
 using System.Text;
-using A6ToolKits.Database.DataModels;
 using RapidDeskToolkit.Common.DatabaseManager.DataConverters;
 using RapidDeskToolkit.Common.DatabaseManager.Exceptions;
+using RapidDeskToolkit.Common.DatabaseManager.Models;
 
 namespace RapidDeskToolkit.Common.DatabaseManager.Managers;
 
@@ -38,7 +38,7 @@ public class CsvDatabaseManager(string folderPath, string id) : FileDatabaseMana
 
         var datasetIndexList = LoadIndex<T>();
 
-        using var file = File.Open(targetPath!, FileMode.Append);
+        using var file = File.Open(targetPath, FileMode.Append);
         foreach (var item in data)
         {
             if (datasetIndexList.Contains(item.GetHashCode()))
@@ -62,7 +62,7 @@ public class CsvDatabaseManager(string folderPath, string id) : FileDatabaseMana
             Initialize<T>();
 
         var result = new List<T>();
-        var lines = File.ReadAllLines(targetPath!);
+        var lines = File.ReadAllLines(targetPath);
         for (var i = 1; i < lines.Length; i++)
         {
             var line = lines[i];
@@ -160,7 +160,7 @@ public class CsvDatabaseManager(string folderPath, string id) : FileDatabaseMana
             Initialize<T>();
 
         var result = new List<T>();
-        var lines = File.ReadAllLines(targetPath!);
+        var lines = File.ReadAllLines(targetPath);
         for (var i = 1; i < lines.Length; i++)
         {
             var line = lines[i];
@@ -188,6 +188,6 @@ public class CsvDatabaseManager(string folderPath, string id) : FileDatabaseMana
             throw new InvalidDataModelException(typeof(T));
         
         var header = dataModel.GetCsvHeader(Split);
-        File.WriteAllText(targetPath!, header);
+        File.WriteAllText(targetPath, header);
     }
 }

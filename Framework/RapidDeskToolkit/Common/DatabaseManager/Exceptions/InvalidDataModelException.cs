@@ -12,10 +12,9 @@ public class InvalidDataModelException : FrameworkExceptionBase
     /// </summary>
     /// <param name="errorType">错误类型。</param>
     /// <param name="details">错误详情。</param>
-    public InvalidDataModelException(Type errorType, string? details = null)
+    public InvalidDataModelException(Type errorType, string details = "")
         : base(ErrorCode.InvalidArgument, $"The data model {errorType.FullName} is invalid.", details)
     {
 
     }
 }
-

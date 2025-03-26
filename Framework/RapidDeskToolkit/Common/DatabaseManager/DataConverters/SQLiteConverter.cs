@@ -1,8 +1,8 @@
 ﻿using System.Linq.Expressions;
 using System.Reflection;
 using System.Text;
-using A6ToolKits.Database.DataModels;
 using RapidDeskToolkit.Common.DatabaseManager.Attributes;
+using RapidDeskToolkit.Common.DatabaseManager.Models;
 using RapidDeskToolkit.Common.DatabaseManager.Models.Enums;
 
 namespace RapidDeskToolkit.Common.DatabaseManager.DataConverters;
@@ -189,7 +189,7 @@ public static class SQLiteConverter
         return result.ToString();
     }
 
-    private static string GenerationSingleConditionStatement<T>(BinaryExpression expression) where T : class, IData
+    private static string GenerationSingleConditionStatement<T>(BinaryExpression? expression) where T : class, IData
     {
         var data = Activator.CreateInstance<T>();
         var columns = data.GetAllColumns();

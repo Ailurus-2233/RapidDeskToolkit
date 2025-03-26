@@ -1,6 +1,6 @@
-﻿using Avalonia;
-using Avalonia.Controls;
-using Avalonia.Markup.Xaml;
+﻿using Avalonia.Controls;
+
+using RapidDeskToolkit.UIDemo.Resources;
 
 namespace RapidDeskToolkit.UIDemo.Pages;
 
@@ -11,5 +11,7 @@ public partial class OverviewPage : UserControl, IPage
         InitializeComponent();
     }
 
-    public string Title { get; set; } = Language.OverviewPageTitle;
+    public string Title => Language.OverviewPageName;
+
+    public UserControl GetUserControl() => this;
 }

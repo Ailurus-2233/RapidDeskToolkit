@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using System.Xml;
-using A6ToolKits.Database.DataModels;
 using RapidDeskToolkit.Common.DatabaseManager.Attributes;
+using RapidDeskToolkit.Common.DatabaseManager.Models;
 
 namespace RapidDeskToolkit.Common.DatabaseManager.DataConverters;
 
@@ -29,7 +29,6 @@ public static class XmlConverter
         {
             if (!primaryKey.GetCustomAttribute<ColumnTypeAttribute>()!.IsFileColumn()) continue;
             var primaryKeyElementItem = data.CreateXmlElement(xml, primaryKey);
-            if (primaryKeyElementItem == null) continue;
             primaryKeyElement.AppendChild(primaryKeyElementItem);
         }
 
@@ -41,7 +40,6 @@ public static class XmlConverter
         {
             if (!column.GetCustomAttribute<ColumnTypeAttribute>()!.IsFileColumn()) continue;
             var columnElement = data.CreateXmlElement(xml, column);
-            if (columnElement == null) continue;
             root.AppendChild(columnElement);
         }
 

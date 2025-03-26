@@ -7,9 +7,9 @@ namespace RapidDeskToolkit.Common.Container;
 /// </summary>
 public class IoCContainer : IIoCContainer
 {
-    private static readonly Lazy<IoCContainer> instance = new(() => new IoCContainer());
+    private static readonly Lazy<IoCContainer> InnerInstance = new(() => new IoCContainer());
     private readonly IServiceCollection _services;
-    private IServiceProvider _serviceProvider;
+    private IServiceProvider? _serviceProvider;
 
     private IoCContainer()
     {
@@ -19,7 +19,7 @@ public class IoCContainer : IIoCContainer
     /// <summary>
     ///     获取 IoC 容器实例
     /// </summary>
-    public static IoCContainer Instance => instance.Value;
+    public static IoCContainer Instance => InnerInstance.Value;
 
     /// <summary>
     ///     创建指定类型的实例
@@ -204,7 +204,7 @@ public class IoCContainer : IIoCContainer
     /// <returns>
     ///     返回服务实例
     /// </returns>
-    public TService GetInstance<TService>()
+    public TService? GetInstance<TService>()
     {
         _serviceProvider = _services.BuildServiceProvider();
         return _serviceProvider.GetService<TService>();
@@ -219,7 +219,7 @@ public class IoCContainer : IIoCContainer
     /// <returns>
     ///     返回服务实例
     /// </returns>
-    public object GetInstance(Type serviceType)
+    public object? GetInstance(Type serviceType)
     {
         _serviceProvider = _services.BuildServiceProvider();
         return _serviceProvider.GetService(serviceType);

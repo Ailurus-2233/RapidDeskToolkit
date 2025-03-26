@@ -1,12 +1,5 @@
-﻿using System.Diagnostics;
-using System.Net.Mime;
-using A6ToolKits.Starter;
-using Avalonia;
+﻿using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Markup.Xaml.Styling;
-using Avalonia.Styling;
-using Avalonia.Themes.Simple;
-using RapidDeskToolkit.ApplicationController;
 using RapidDeskToolkit.Common.ApplicationController;
 using RapidDeskToolkit.Common.Bootstrapper.Events;
 using RapidDeskToolkit.Common.Container;
@@ -72,7 +65,7 @@ public abstract class BaseBootstrapper<TApplication, TWindow> : ApplicationContr
     /// <param name="args">
     ///     命令行参数
     /// </param>
-    public override void Run(string[] args)
+    public override void Run(string[]? args)
     {
         base.Run(args);
         Initialize();

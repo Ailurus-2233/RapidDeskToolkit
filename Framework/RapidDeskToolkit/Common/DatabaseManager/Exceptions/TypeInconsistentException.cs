@@ -15,6 +15,6 @@ namespace RapidDeskToolkit.Common.DatabaseManager.Exceptions;
 /// <param name="details">
 ///     异常详细信息
 /// </param>
-public class TypeInconsistentException(ColumnType columnType, Type type, string? details = null)
+public class TypeInconsistentException(ColumnType columnType, Type type, string details = "")
     : FrameworkExceptionBase(ErrorCode.InvalidArgument, $"Type: {type} inconsistent with ColumnType: {columnType}",
         details);

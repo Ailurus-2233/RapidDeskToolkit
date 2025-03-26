@@ -6,7 +6,8 @@
 /// <param name="code"></param>
 /// <param name="information"></param>
 /// <param name="details"></param>
-public abstract class FrameworkExceptionBase(ErrorCode code, string information, string details = null) : Exception(information)
+public abstract class FrameworkExceptionBase(ErrorCode code, string information, string details = "") : Exception
+    (information)
 {
     /// <summary>
     ///     错误码，用于标识错误类型
@@ -37,4 +38,3 @@ public abstract class FrameworkExceptionBase(ErrorCode code, string information,
         }
     }
 }
-

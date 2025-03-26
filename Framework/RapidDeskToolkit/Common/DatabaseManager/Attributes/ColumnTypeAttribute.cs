@@ -175,7 +175,7 @@ public class ColumnTypeAttribute(string name, ColumnType columnType, int dataLen
     /// <returns>
     ///     返回是否通过类型检查
     /// </returns>
-    public bool TypeCheck(object value)
+    public bool TypeCheck(object? value)
     {
         if (value == null) return false;
         return _availableTypes.TryGetValue(ColumnType, out var type) && type.Contains(value.GetType());

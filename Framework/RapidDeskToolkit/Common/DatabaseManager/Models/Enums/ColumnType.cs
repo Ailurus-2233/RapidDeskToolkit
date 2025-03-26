@@ -7,6 +7,7 @@ public enum ColumnType
 {
 #pragma warning disable CS1591 // 缺少对公共可见类型或成员的 XML 注释
     // SQLite
+    // ReSharper disable InconsistentNaming
     SQLITE_NULL,
     SQLITE_INTEGER,
     SQLITE_REAL,
@@ -53,5 +54,6 @@ public enum ColumnType
     FILE_INTEGER,
     File_FLOAT,
     File_BOOLEAN,
+    // ReSharper restore InconsistentNaming
 #pragma warning restore CS1591 // 缺少对公共可见类型或成员的 XML 注释
 }

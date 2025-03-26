@@ -11,7 +11,7 @@ namespace RapidDeskToolkit.Common.Container;
 /// </summary>
 public static class IoC
 {
-    private static readonly IIoCContainer container = IoCContainer.Instance;
+    private static readonly IIoCContainer Container = IoCContainer.Instance;
 
     /// <summary>
     ///     创建指定类型的实例
@@ -24,7 +24,7 @@ public static class IoC
     /// </returns>
     public static TService? Create<TService>() where TService : class
     {
-        return container.Create<TService>();
+        return Container.Create<TService>();
     }
 
     /// <summary>
@@ -38,7 +38,7 @@ public static class IoC
     /// </returns>
     public static object? Create(Type type)
     {
-        return container.Create(type);
+        return Container.Create(type);
     }
 
     /// <summary>
@@ -49,7 +49,7 @@ public static class IoC
     /// </param>
     public static void Register(Type serviceType)
     {
-        container.Register(serviceType);
+        Container.Register(serviceType);
     }
 
     /// <summary>
@@ -63,7 +63,7 @@ public static class IoC
     /// </param>
     public static void Register(Type serviceType, Type implementationType)
     {
-        container.Register(serviceType, implementationType);
+        Container.Register(serviceType, implementationType);
     }
 
     /// <summary>
@@ -74,7 +74,7 @@ public static class IoC
     /// </typeparam>
     public static void Register<TService>() where TService : class
     {
-        container.Register<TService>();
+        Container.Register<TService>();
     }
 
     /// <summary>
@@ -89,7 +89,7 @@ public static class IoC
     public static void Register<TService, TImplementation>()
         where TImplementation : class, TService where TService : class
     {
-        container.Register<TService, TImplementation>();
+        Container.Register<TService, TImplementation>();
     }
 
     /// <summary>
@@ -103,7 +103,7 @@ public static class IoC
     /// </typeparam>
     public static void Register<TService>(Func<IServiceProvider, TService> implementationFactory) where TService : class
     {
-        container.Register(implementationFactory);
+        Container.Register(implementationFactory);
     }
 
     /// <summary>
@@ -114,7 +114,7 @@ public static class IoC
     /// </param>
     public static void RegisterSingleton(Type serviceType)
     {
-        container.RegisterSingleton(serviceType);
+        Container.RegisterSingleton(serviceType);
     }
 
     /// <summary>
@@ -128,7 +128,7 @@ public static class IoC
     /// </param>
     public static void RegisterSingleton(Type serviceType, Type implementationType)
     {
-        container.RegisterSingleton(serviceType, implementationType);
+        Container.RegisterSingleton(serviceType, implementationType);
     }
 
     /// <summary>
@@ -142,7 +142,7 @@ public static class IoC
     /// </param>
     public static void RegisterSingleton(Type serviceType, object serviceInstance)
     {
-        container.RegisterSingleton(serviceType, serviceInstance);
+        Container.RegisterSingleton(serviceType, serviceInstance);
     }
 
     /// <summary>
@@ -157,7 +157,7 @@ public static class IoC
     public static void RegisterSingleton<TService, TImplementation>()
         where TImplementation : class, TService where TService : class
     {
-        container.RegisterSingleton<TService, TImplementation>();
+        Container.RegisterSingleton<TService, TImplementation>();
     }
 
     /// <summary>
@@ -171,7 +171,7 @@ public static class IoC
     /// </typeparam>
     public static void RegisterSingleton<TService>(TService service) where TService : class
     {
-        container.RegisterSingleton(service);
+        Container.RegisterSingleton(service);
     }
 
     /// <summary>
@@ -183,7 +183,7 @@ public static class IoC
     public static void RegisterSingleton<TService>(Func<IServiceProvider, TService> implementationFactory)
         where TService : class
     {
-        container.RegisterSingleton(implementationFactory);
+        Container.RegisterSingleton(implementationFactory);
     }
 
     /// <summary>
@@ -197,7 +197,7 @@ public static class IoC
     /// </returns>
     public static TService? GetInstance<TService>()
     {
-        return container.GetInstance<TService>();
+        return Container.GetInstance<TService>();
     }
 
     /// <summary>
@@ -211,6 +211,6 @@ public static class IoC
     /// </returns>
     public static object? GetInstance(Type serviceType)
     {
-        return container.GetInstance(serviceType);
+        return Container.GetInstance(serviceType);
     }
 }
