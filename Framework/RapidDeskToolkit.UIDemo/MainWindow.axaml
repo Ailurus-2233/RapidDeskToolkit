@@ -43,7 +43,8 @@
             <Border Classes="Shadow" Margin="5">
                 <ScrollViewer>
                     <ListBox ItemsSource="{Binding Pages}"
-                             SelectedItem="{Binding SelectedPage}">
+                             SelectedItem="{Binding SelectedPage}"
+                             SelectionMode="AlwaysSelected">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding Title}" />
