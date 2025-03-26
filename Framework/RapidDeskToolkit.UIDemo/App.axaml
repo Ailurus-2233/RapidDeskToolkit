@@ -1,13 +1,12 @@
 <Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:u-Semi="https://irihi.tech/semi"
+             xmlns:uiPackage="clr-namespace:RapidDeskToolkit.UIPackage;assembly=RapidDeskToolkit.UIPackage"
              x:Class="RapidDeskToolkit.UIDemo.App"
              RequestedThemeVariant="Default">
     <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
     <Application.Styles>
-        <u-Semi:SemiTheme />
-        <StyleInclude Source="avares://RapidDeskToolkit.UIPackage/Styles/UIPackageStyle.axaml" />
+        <uiPackage:Generic />
     </Application.Styles>
 
     <Application.Resources>

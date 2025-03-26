@@ -30,6 +30,7 @@ public partial class MainWindowViewModel : ObservableObject
     partial void OnSelectedPageChanged(IPage? value)
     {
         SelectedControl = value?.GetUserControl();
+        Header = Language.WindowTitleName + (value is null ? string.Empty : $" - {value.Title}");
     }
 
     [RelayCommand]
