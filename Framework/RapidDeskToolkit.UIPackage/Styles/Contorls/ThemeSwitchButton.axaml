@@ -1,0 +1,161 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:RapidDeskToolkit.UIPackage.Controls">
+    <Design.PreviewWith>
+        <Border Padding="20" Background="Black">
+            <!-- Add Controls for Previewer Here -->
+            <controls:ThemeSwitchButton Width="130" Height="50" CornerRadius="50" IsChecked="True" />
+        </Border>
+    </Design.PreviewWith>
+
+    <!-- Add Styles Here -->
+    <Style Selector="controls|ThemeSwitchButton">
+        <Setter Property="Background" Value="#8cbcfa" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="Gray" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border CornerRadius="{TemplateBinding CornerRadius}"
+                        Background="{TemplateBinding Background}"
+                        ClipToBounds="True">
+                    <Panel>
+                        <Canvas Name="stars">
+                            <Ellipse
+                                Canvas.Left="{Binding StarPoints[0].X, RelativeSource={RelativeSource TemplatedParent}}"
+                                Canvas.Top="{Binding StarPoints[0].Y, RelativeSource={RelativeSource TemplatedParent}}"/>
+                            <Ellipse
+                                Canvas.Left="{Binding StarPoints[1].X, RelativeSource={RelativeSource TemplatedParent}}"
+                                Canvas.Top="{Binding StarPoints[1].Y, RelativeSource={RelativeSource TemplatedParent}}"/>
+                            <Ellipse
+                                Canvas.Left="{Binding StarPoints[2].X, RelativeSource={RelativeSource TemplatedParent}}"
+                                Canvas.Top="{Binding StarPoints[2].Y, RelativeSource={RelativeSource TemplatedParent}}"/>
+                            <Ellipse
+                                Canvas.Left="{Binding StarPoints[3].X, RelativeSource={RelativeSource TemplatedParent}}"
+                                Canvas.Top="{Binding StarPoints[3].Y, RelativeSource={RelativeSource TemplatedParent}}"/>
+                            <Ellipse
+                                Canvas.Left="{Binding StarPoints[4].X, RelativeSource={RelativeSource TemplatedParent}}"
+                                Canvas.Top="{Binding StarPoints[4].Y, RelativeSource={RelativeSource TemplatedParent}}"/>
+                            <Ellipse
+                                Canvas.Left="{Binding StarPoints[5].X, RelativeSource={RelativeSource TemplatedParent}}"
+                                Canvas.Top="{Binding StarPoints[5].Y, RelativeSource={RelativeSource TemplatedParent}}"/>
+                            <Ellipse
+                                Canvas.Left="{Binding StarPoints[6].X, RelativeSource={RelativeSource TemplatedParent}}"
+                                Canvas.Top="{Binding StarPoints[6].Y, RelativeSource={RelativeSource TemplatedParent}}"/>
+                            <Ellipse
+                                Canvas.Left="{Binding StarPoints[7].X, RelativeSource={RelativeSource TemplatedParent}}"
+                                Canvas.Top="{Binding StarPoints[7].Y, RelativeSource={RelativeSource TemplatedParent}}"
+                                Opacity="0.3" />
+                            <Ellipse
+                                Canvas.Left="{Binding StarPoints[8].X, RelativeSource={RelativeSource TemplatedParent}}"
+                                Canvas.Top="{Binding StarPoints[8].Y, RelativeSource={RelativeSource TemplatedParent}}"
+                                Opacity="0.3" />
+                            <Ellipse
+                                Canvas.Left="{Binding StarPoints[8].X, RelativeSource={RelativeSource TemplatedParent}}"
+                                Canvas.Top="{Binding StarPoints[8].Y, RelativeSource={RelativeSource TemplatedParent}}"
+                                Opacity="0.3" />
+                            <Ellipse
+                                Canvas.Left="{Binding StarPoints[9].X, RelativeSource={RelativeSource TemplatedParent}}"
+                                Canvas.Top="{Binding StarPoints[9].Y, RelativeSource={RelativeSource TemplatedParent}}"
+                                Opacity="0.3" />
+                            <Ellipse
+                                Canvas.Left="{Binding StarPoints[10].X, RelativeSource={RelativeSource TemplatedParent}}"
+                                Canvas.Top="{Binding StarPoints[10].Y, RelativeSource={RelativeSource TemplatedParent}}"
+                                Opacity="0.3" />
+                            <Ellipse
+                                Canvas.Left="{Binding StarPoints[11].X, RelativeSource={RelativeSource TemplatedParent}}"
+                                Canvas.Top="{Binding StarPoints[11].Y, RelativeSource={RelativeSource TemplatedParent}}"
+                                Opacity="0.3" />
+                            <Ellipse
+                                Canvas.Left="{Binding StarPoints[12].X, RelativeSource={RelativeSource TemplatedParent}}"
+                                Canvas.Top="{Binding StarPoints[12].Y, RelativeSource={RelativeSource TemplatedParent}}"
+                                Opacity="0.3" />
+                        </Canvas>
+                        <Path Classes="cloud" Name="Cloud1" />
+                        <Path Classes="cloud" Name="Cloud2" />
+                        <Path Classes="cloud" Name="Cloud3" />
+                        <Ellipse Name="Planet" />
+                    </Panel>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+        <Setter Property="Transitions">
+            <Transitions>
+                <BrushTransition Property="Background" Duration="0:0:0.35" />
+            </Transitions>
+        </Setter>
+    </Style>
+
+    <Style Selector="controls|ThemeSwitchButton /template/ Canvas#stars">
+        <Setter Property="Opacity" Value="0" />
+        <Setter Property="Transitions">
+            <Transitions>
+                <DoubleTransition Property="Opacity" Duration="0:0:0.35" />
+            </Transitions>
+        </Setter>
+    </Style>
+
+    <Style Selector="controls|ThemeSwitchButton /template/ Canvas#stars Ellipse">
+        <Setter Property="Fill" Value="White" />
+        <Setter Property="Width" Value="1.5" />
+        <Setter Property="Height" Value="1.5" />
+    </Style>
+
+    <Style Selector="controls|ThemeSwitchButton:checked /template/ Canvas#stars">
+        <Setter Property="Opacity" Value="1" />
+    </Style>
+
+    <Style Selector="controls|ThemeSwitchButton /template/ Path.cloud">
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="Data"
+                Value="m6.15937,30.80641c-12.75504,-5.62722 -3.75148,-23.63433 9.32526,-20.76713c2.67948,-13.7465 18.62328,-9.4323 20.87417,-4.55537c7.12782,-10.50415 21.38345,-4.12663 21.33,4.18023c8.3067,-8.30686 19.186,2.00972 15.9438,9.3787c9.057,-3.24236 14.8718,9.13753 7.55641,14.57718c3.93906,5.8148 -1.87574,17.25682 -13.93393,9.80745c0.80374,7.63694 -12.70159,14.38961 -22.64302,2.94759c-4.68935,8.06569 -23.07161,6.37752 -22.93748,-5.57362c-7.63709,6.51149 -18.70396,-1.74176 -15.5152,-9.99502l-0.00001,-0.00001z" />
+        <Setter Property="Fill" Value="#fff" />
+        <Setter Property="Transitions">
+            <Transitions>
+                <DoubleTransition Property="Opacity" Duration="0:0:0.35" />
+            </Transitions>
+        </Setter>
+        <Style Selector="^#Cloud1">
+            <Setter Property="Opacity" Value="0.4" />
+            <Setter Property="Margin"
+                    Value="{Binding CloudMargins[0], RelativeSource={RelativeSource TemplatedParent}}" />
+        </Style>
+        <Style Selector="^#Cloud2">
+            <Setter Property="Opacity" Value="0.6" />
+            <Setter Property="Margin"
+                    Value="{Binding CloudMargins[1], RelativeSource={RelativeSource TemplatedParent}}" />
+        </Style>
+        <Style Selector="^#Cloud3">
+            <Setter Property="Opacity" Value="0.8" />
+            <Setter Property="Margin"
+                    Value="{Binding CloudMargins[2], RelativeSource={RelativeSource TemplatedParent}}" />
+        </Style>
+    </Style>
+
+    <Style Selector="controls|ThemeSwitchButton:checked /template/ Path.cloud">
+        <Setter Property="Opacity" Value="0" />
+    </Style>
+
+    <Style Selector="controls|ThemeSwitchButton:checked">
+        <Setter Property="Background" Value="#191c25" />
+    </Style>
+
+    <Style Selector="controls|ThemeSwitchButton /template/ Ellipse#Planet">
+        <Setter Property="Fill" Value="#ffa34c" />
+        <Setter Property="Width" Value="{Binding IconSize, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="Height" Value="{Binding IconSize, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="RenderTransform"
+                Value="{Binding StartPointTranslated, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="Transitions">
+            <Transitions>
+                <TransformOperationsTransition Easing="CubicEaseInOut" Property="RenderTransform" Duration="0:0:0.35" />
+                <BrushTransition Property="Fill" Duration="0:0:0.35" />
+            </Transitions>
+        </Setter>
+    </Style>
+
+    <Style Selector="controls|ThemeSwitchButton:checked /template/ Ellipse#Planet">
+        <Setter Property="Fill" Value="#e5b91a" />
+        <Setter Property="RenderTransform"
+                Value="{Binding EndPointTranslated, RelativeSource={RelativeSource TemplatedParent}}" />
+    </Style>
+</Styles>

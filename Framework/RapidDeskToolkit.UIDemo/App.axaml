@@ -7,10 +7,12 @@
 
     <Application.Styles>
         <u-Semi:SemiTheme />
+        <StyleInclude Source="avares://RapidDeskToolkit.UIPackage/Styles/UIPackageStyle.axaml" />
     </Application.Styles>
 
     <Application.Resources>
         <ResourceDictionary>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

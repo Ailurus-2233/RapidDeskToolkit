@@ -3,6 +3,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:uiDemo="clr-namespace:RapidDeskToolkit.UIDemo"
+        xmlns:controls="clr-namespace:RapidDeskToolkit.UIPackage.Controls;assembly=RapidDeskToolkit.UIPackage"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="RapidDeskToolkit.UIDemo.MainWindow"
         x:DataType="uiDemo:MainWindowViewModel"
@@ -31,9 +32,12 @@
 
     <Grid RowDefinitions="40, *">
         <Border Classes="Shadow" Margin="5,5,5,0">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <TextBlock Text="{Binding Header}" Margin="5 0 0 0 " />
-            </StackPanel>
+            <Grid ColumnDefinitions="*,*,*">
+                <TextBlock Grid.Column="1" Text="{Binding Header}" Margin="5 0 0 0 " TextAlignment="Center" />
+                <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <controls:ThemeSwitchButton  Width="45" Height="20" CornerRadius="25" />
+                </StackPanel>
+            </Grid>
         </Border>
         <Grid Grid.Row="1" ColumnDefinitions="300, *">
             <Border Classes="Shadow" Margin="5">

@@ -17,4 +17,23 @@
       <PackageReference Include="Semi.Avalonia.TreeDataGrid" Version="11.0.10.1" />
     </ItemGroup>
 
+    <ItemGroup>
+      <UpToDateCheckInput Remove="Resources\Brushs\BrushResources.axaml" />
+      <UpToDateCheckInput Remove="Resources\Icons\Base\CloseIconResource.axaml" />
+      <UpToDateCheckInput Remove="Resources\Icons\Base\MaximizeIconResource.axaml" />
+      <UpToDateCheckInput Remove="Resources\Icons\Base\MenuIconResource.axaml" />
+      <UpToDateCheckInput Remove="Resources\Icons\Base\MinusIconResource.axaml" />
+      <UpToDateCheckInput Remove="Resources\Icons\Base\WindowIconResource.axaml" />
+      <UpToDateCheckInput Remove="Resources\Icons\IconResources.axaml" />
+      <UpToDateCheckInput Remove="Resources\Resources.axaml" />
+      <UpToDateCheckInput Remove="Themes\Controls\Buttons\CommandButton.axaml" />
+      <UpToDateCheckInput Remove="Themes\Controls\ControlsTheme.axaml" />
+      <UpToDateCheckInput Remove="Themes\GenericTheme.axaml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Resources\" />
+      <Folder Include="Themes\" />
+    </ItemGroup>
+
 </Project>
