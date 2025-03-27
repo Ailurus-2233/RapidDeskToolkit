@@ -11,12 +11,12 @@ public interface IService
     void Initialize();
     
     /// <summary>
-    ///     模块加载流程
+    ///     服务加载流程
     /// </summary>
-    public void OnLoad();
+    public void OnStartService();
     
     /// <summary>
     ///     当服务被卸载时调用
     /// </summary>
-    void OnUnload();
+    void OnStopService();
 }

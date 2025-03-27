@@ -36,6 +36,7 @@
       </EmbeddedResource>
       <EmbeddedResource Remove="Desktop\**" />
       <EmbeddedResource Remove="Models\MVVM\**" />
+      <EmbeddedResource Remove="Models\Commands\**" />
     </ItemGroup>
 
     <ItemGroup>
@@ -56,16 +57,19 @@
       </Compile>
       <Compile Remove="Desktop\**" />
       <Compile Remove="Models\MVVM\**" />
+      <Compile Remove="Models\Commands\**" />
     </ItemGroup>
 
     <ItemGroup>
       <AvaloniaXaml Remove="Desktop\**" />
       <AvaloniaXaml Remove="Models\MVVM\**" />
+      <AvaloniaXaml Remove="Models\Commands\**" />
     </ItemGroup>
 
     <ItemGroup>
       <AdditionalFiles Remove="Desktop\**" />
       <AdditionalFiles Remove="Models\MVVM\**" />
+      <AdditionalFiles Remove="Models\Commands\**" />
     </ItemGroup>
 
     <ItemGroup>
@@ -75,6 +79,7 @@
     <ItemGroup>
       <None Remove="Desktop\**" />
       <None Remove="Models\MVVM\**" />
+      <None Remove="Models\Commands\**" />
     </ItemGroup>
 
 </Project>
