@@ -2,8 +2,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:pages="clr-namespace:RapidDeskToolkit.UIDemo.Pages"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="RapidDeskToolkit.UIDemo.Pages.OverviewPage">
+             x:Class="RapidDeskToolkit.UIDemo.Pages.OverviewPage"
+             x:DataType="pages:OverviewPage">
+    <UserControl.Styles>
+        <Style Selector="Border.CodeBlock">
+            <Setter Property="BorderBrush" Value="{DynamicResource SemiColorBorder}" />
+            <Setter Property="Padding" Value="16" />
+            <Setter Property="CornerRadius" Value="6" />
+            <Setter Property="Background" Value="{DynamicResource SemiColorFill0}" />
+        </Style>
+    </UserControl.Styles>
     <ScrollViewer HorizontalScrollBarVisibility="Auto">
         <StackPanel Margin="20">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20">
@@ -36,9 +46,25 @@
             <TextBlock
                 HorizontalAlignment="Center"
                 Classes="Secondary"
-                Text="UI方面，他使用了 Semi.Avalonia 和 Ursa.Avalonia 两个库，这个用例将描述在开发过程中如何使用这些主题。"
+                Text="UI方面，使用了 Semi.Avalonia 和 Ursa.Avalonia 两个库，这个用例将描述在开发过程中如何使用这些主题。"
                 TextWrapping="Wrap" />
+            <TabControl Padding="8" MaxWidth="800">
+                <TabItem Header="如何使用">
+                    <StackPanel>
+                        <TextBlock Text="调用项目" />
+                        <Border Margin="0,16" Classes="CodeBlock">
+                            <SelectableTextBlock FontFamily="Consolas" Text="{Binding NeedProjects}" />
+                        </Border>
+                        <TextBlock Text="在 App.xaml 中加载 Styles" />
+                        <Border Margin="0,16" Classes="CodeBlock">
+                            <SelectableTextBlock
+                                FontFamily="Consolas"
+                                Text="{Binding StylesName}"
+                                TextWrapping="Wrap" />
+                        </Border>
+                    </StackPanel>
+                </TabItem>
+            </TabControl>
         </StackPanel>
-
     </ScrollViewer>
 </UserControl>

@@ -1,8 +1,10 @@
 ﻿<Styles x:Class="RapidDeskToolkit.UIPackage.Generic"
         xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:semi="https://irihi.tech/semi">
+        xmlns:semi="https://irihi.tech/semi"
+        xmlns:u-Semi="https://irihi.tech/ursa/themes/semi">
     <semi:SemiTheme />
+    <u-Semi:SemiTheme />
     <StyleInclude Source="Styles/UIPackageStyle.axaml" />
     <StyleInclude Source="avares://Semi.Avalonia.ColorPicker/Index.axaml" />
     <StyleInclude Source="avares://Semi.Avalonia.DataGrid/Index.axaml" />
