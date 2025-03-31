@@ -1,0 +1,207 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:RapidDeskToolkit.UIDemo.Pages.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="RapidDeskToolkit.UIDemo.Pages.Views.OverviewPage"
+             x:DataType="viewModels:OverviewPageViewModel">
+    <UserControl.Styles>
+        <Style Selector="Border.CodeBlock">
+            <Setter Property="BorderBrush" Value="{DynamicResource SemiColorBorder}" />
+            <Setter Property="Padding" Value="16" />
+            <Setter Property="CornerRadius" Value="6" />
+            <Setter Property="Background" Value="{DynamicResource SemiColorFill0}" />
+        </Style>
+    </UserControl.Styles>
+    <ScrollViewer HorizontalScrollBarVisibility="Auto">
+        <StackPanel Margin="20">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20">
+                <Image Width="32" Height="32" Source="{StaticResource AvaloniaIcon}" />
+            </StackPanel>
+            <TextBlock
+                HorizontalAlignment="Center"
+                Classes="H1"
+                Text="{Binding Title}"
+                Theme="{DynamicResource TitleTextBlock}" />
+            <TextBlock
+                Margin="0,20,0,0"
+                HorizontalAlignment="Center"
+                Classes="Secondary"
+                Text="{Binding Description}"
+                TextWrapping="Wrap"
+                MaxWidth="800" />
+            <TabControl Padding="8" MaxWidth="800" Margin="0,20,0,0">
+                <TabItem Header="{Binding HowToUse}" FontSize="16">
+                    <StackPanel>
+                        <TextBlock Text="{Binding AddDependencies}" Classes="H6"
+                                   Theme="{StaticResource TitleTextBlock}" />
+                        <Border Margin="0,8" Classes="CodeBlock">
+                            <SelectableTextBlock FontFamily="Consolas" Text="{Binding NeedProjects}" />
+                        </Border>
+                        <TextBlock Text="{Binding LoadStyles}" Classes="H6"
+                                   Theme="{StaticResource TitleTextBlock}" />
+                        <Border Margin="0,8" Classes="CodeBlock">
+                            <SelectableTextBlock
+                                FontFamily="Consolas"
+                                Text="{Binding StylesName}"
+                                TextWrapping="Wrap" />
+                        </Border>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="{Binding Example}" FontSize="16">
+                    <StackPanel HorizontalAlignment="Center">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <StackPanel>
+                                    <StackPanel Margin="16,0" Orientation="Horizontal">
+                                        <StackPanel>
+                                            <Button
+                                                Margin="0,8"
+                                                Classes="Success"
+                                                Content="Success"
+                                                HorizontalAlignment="Stretch"
+                                                Theme="{DynamicResource SolidButton}" />
+                                            <Button
+                                                Margin="0,8"
+                                                Classes="Warning"
+                                                Content="Warning"
+                                                HorizontalAlignment="Stretch"
+                                                Theme="{DynamicResource SolidButton}" />
+                                            <Button
+                                                Margin="0,8"
+                                                Classes="Danger"
+                                                Content="Danger"
+                                                HorizontalAlignment="Stretch"
+                                                Theme="{DynamicResource SolidButton}" />
+                                        </StackPanel>
+                                        <StackPanel Margin="20,0,0,0">
+                                            <Button
+                                                Margin="0,8"
+                                                Classes="Primary"
+                                                Content="Primary"
+                                                HorizontalAlignment="Stretch"
+                                                Theme="{DynamicResource SolidButton}" />
+                                            <Button
+                                                Margin="0,8"
+                                                Classes="Secondary"
+                                                Content="Secondary"
+                                                HorizontalAlignment="Stretch"
+                                                Theme="{DynamicResource SolidButton}" />
+                                            <Button
+                                                Margin="0,8"
+                                                Classes="Tertiary"
+                                                Content="Tertiary"
+                                                HorizontalAlignment="Stretch"
+                                                Theme="{DynamicResource SolidButton}" />
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <TabStrip Margin="0,8">
+                                        <TabStripItem Content="Tab 1" />
+                                        <TabStripItem Content="Tab 2" />
+                                        <TabStripItem Content="Tab 3" />
+                                    </TabStrip>
+                                    <Menu Margin="0,8">
+                                        <MenuItem Header="Menu 1">
+                                            <MenuItem Header="SubMenu 1" />
+                                            <MenuItem Header="SubMenu 2" />
+                                            <MenuItem Header="SubMenu 3" />
+                                        </MenuItem>
+                                        <MenuItem Header="Menu 2">
+                                            <MenuItem Header="SubMenu 1" />
+                                            <MenuItem Header="SubMenu 2" />
+                                            <MenuItem Header="SubMenu 3" />
+                                            <MenuItem Header="SubMenu 4">
+                                                <MenuItem Header="SubMenu 1" />
+                                                <MenuItem Header="SubMenu 2" />
+                                                <MenuItem Header="SubMenu 3" />
+                                            </MenuItem>
+                                        </MenuItem>
+                                        <MenuItem Header="Menu 3" />
+                                    </Menu>
+                                </StackPanel>
+
+                                <Calendar Margin="16,0" Width="300" />
+                                <StackPanel Margin="16,0">
+                                    <TextBox
+                                        Width="300"
+                                        Margin="0,12"
+                                        InnerLeftContent="https://"
+                                        InnerRightContent=".com" />
+                                    <DatePicker Width="300" Margin="0,12" />
+                                    <CalendarDatePicker Width="300" Margin="0,12" />
+                                    <NumericUpDown Width="300" Margin="0,12" />
+                                    <ComboBox Width="300" Margin="0,12">
+                                        <ComboBoxItem>Avalonia</ComboBoxItem>
+                                        <ComboBoxItem>Semi Design</ComboBoxItem>
+                                        <ComboBoxItem>IRIHI Technology</ComboBoxItem>
+                                        <ComboBoxItem>RapidDeskToolkit</ComboBoxItem>
+                                    </ComboBox>
+                                </StackPanel>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <ColorView Width="250" Name="Test" ColorSpectrumShape="Ring" />
+                                <StackPanel Width="250" Margin="8">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Slider Name="Slider"
+                                                Width="150"
+                                                Margin="16"
+                                                Maximum="100"
+                                                Minimum="0" />
+                                        <ToggleSwitch Theme="{StaticResource SimpleToggleSwitch}" Name="Three"
+                                                      IsChecked="True" />
+                                    </StackPanel>
+                                    <UniformGrid Columns="2">
+                                        <ProgressBar
+                                            Width="100"
+                                            MinWidth="100"
+                                            Margin="0,16"
+                                            IsIndeterminate="{Binding #Three.IsChecked}"
+                                            ShowProgressText="True"
+                                            Value="{Binding #Slider.Value}" />
+                                        <ProgressBar
+                                            Width="100"
+                                            Height="100"
+                                            IsIndeterminate="{Binding #Three.IsChecked}"
+                                            ShowProgressText="True"
+                                            Theme="{DynamicResource ProgressRing}"
+                                            Value="{Binding #Slider.Value}" />
+                                    </UniformGrid>
+                                </StackPanel>
+                                <StackPanel Margin="8">
+                                    <WrapPanel Width="280">
+                                        <WrapPanel.Styles>
+                                            <Style Selector="Label">
+                                                <Setter Property="Margin" Value="4" />
+                                                <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                            </Style>
+                                        </WrapPanel.Styles>
+                                        <Label Classes="Red" Theme="{StaticResource TagLabel}">Red</Label>
+                                        <Label Classes="Pink" Theme="{StaticResource TagLabel}">Pink</Label>
+                                        <Label Classes="Purple" Theme="{StaticResource TagLabel}">Purple</Label>
+                                        <Label Classes="Violet" Theme="{StaticResource TagLabel}">Violet</Label>
+                                        <Label Classes="Indigo" Theme="{StaticResource TagLabel}">Indigo</Label>
+                                        <Label Classes="Blue" Theme="{StaticResource TagLabel}">Blue</Label>
+                                        <Label Classes="LightBlue" Theme="{StaticResource TagLabel}">LightBlue</Label>
+                                        <Label Classes="Cyan" Theme="{StaticResource TagLabel}">Cyan</Label>
+                                        <Label Classes="Teal" Theme="{StaticResource TagLabel}">Teal</Label>
+                                        <Label Classes="Green" Theme="{StaticResource TagLabel}">Green</Label>
+                                        <Label Classes="LightGreen" Theme="{StaticResource TagLabel}">LightGreen</Label>
+                                        <Label Classes="Lime" Theme="{StaticResource TagLabel}">Lime</Label>
+                                        <Label Classes="Yellow" Theme="{StaticResource TagLabel}">Yellow</Label>
+                                        <Label Classes="Amber" Theme="{StaticResource TagLabel}">Amber</Label>
+                                        <Label Classes="Orange" Theme="{StaticResource TagLabel}">Orange</Label>
+                                        <Label Classes="Grey" Theme="{StaticResource TagLabel}">Grey</Label>
+                                        <Label Classes="White" Theme="{StaticResource TagLabel}">White</Label>
+                                        <Label Classes="Large" Theme="{StaticResource TagLabel}">Large</Label>
+                                        <Label Classes="Circle" Theme="{StaticResource TagLabel}">Circle</Label>
+                                    </WrapPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </TabItem>
+            </TabControl>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

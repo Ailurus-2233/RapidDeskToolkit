@@ -20,41 +20,12 @@
     </ItemGroup>
 
     <ItemGroup>
-      <EmbeddedResource Update="Resources\Language.resx">
-        <Generator>ResXFileCodeGenerator</Generator>
-        <LastGenOutput>Langurage.Designer.cs</LastGenOutput>
-      </EmbeddedResource>
-      <EmbeddedResource Update="Resources\Language.zh.resx">
-        <Generator>ResXFileCodeGenerator</Generator>
-        <LastGenOutput>Language.zh.Designer.cs</LastGenOutput>
-        <DependentUpon>Language.resx</DependentUpon>
-      </EmbeddedResource>
-      <EmbeddedResource Update="Resources\Language.en.resx">
-        <Generator>ResXFileCodeGenerator</Generator>
-        <LastGenOutput>Language.en.Designer.cs</LastGenOutput>
-        <DependentUpon>Language.resx</DependentUpon>
-      </EmbeddedResource>
       <EmbeddedResource Remove="Desktop\**" />
       <EmbeddedResource Remove="Models\MVVM\**" />
       <EmbeddedResource Remove="Models\Commands\**" />
     </ItemGroup>
 
     <ItemGroup>
-      <Compile Update="Resources\Language.Designer.cs">
-        <DesignTime>True</DesignTime>
-        <AutoGen>True</AutoGen>
-        <DependentUpon>Language.resx</DependentUpon>
-      </Compile>
-      <Compile Update="Resources\Language.zh.Designer.cs">
-        <DesignTime>True</DesignTime>
-        <AutoGen>True</AutoGen>
-        <DependentUpon>Language.zh.resx</DependentUpon>
-      </Compile>
-      <Compile Update="Resources\Language.en.Designer.cs">
-        <DesignTime>True</DesignTime>
-        <AutoGen>True</AutoGen>
-        <DependentUpon>Language.en.resx</DependentUpon>
-      </Compile>
       <Compile Remove="Desktop\**" />
       <Compile Remove="Models\MVVM\**" />
       <Compile Remove="Models\Commands\**" />
@@ -80,6 +51,10 @@
       <None Remove="Desktop\**" />
       <None Remove="Models\MVVM\**" />
       <None Remove="Models\Commands\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Resources\" />
     </ItemGroup>
 
 </Project>

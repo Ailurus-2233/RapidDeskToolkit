@@ -1,6 +1,6 @@
-﻿using System.Globalization;
+﻿using System.Resources;
 using RapidDeskToolkit.Common.Bootstrapper;
-using RapidDeskToolkit.UIDemo.Resources;
+using RapidDeskToolkit.Common.LanguageManager;
 
 namespace RapidDeskToolkit.UIDemo;
 
@@ -9,6 +9,8 @@ public class Bootstrapper : BaseBootstrapper<App, MainWindow>
     public override void Initialize()
     {
         base.Initialize();
-        Language.Culture = CultureInfo.CurrentCulture;
+        LanguageManager.AddResourceManager(
+            new ResourceManager("RapidDeskToolkit.UIDemo.I18n.Language",
+                typeof(Bootstrapper).Assembly));
     }
 }

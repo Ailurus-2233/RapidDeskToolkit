@@ -6,5 +6,5 @@ public interface IPage
 {
     public string Title { get; }
     
-    public UserControl GetUserControl();
+    public UserControl? GetUserControl();
 }

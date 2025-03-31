@@ -1,5 +1,4 @@
 ﻿using System.Reflection;
-using RapidDeskToolkit.Resources;
 
 namespace RapidDeskToolkit.Common.AssemblyHandler;
 
@@ -14,7 +13,7 @@ public abstract class AssemblyHandlerBase : IAssemblyHandler
         {
             if (Directory.Exists(path)) result.Add(path);
             else
-                throw new DirectoryNotFoundException($"{Language.ExceptionMessagePathNotFound}: {path}");
+                throw new DirectoryNotFoundException($"{path}");
         }
 
         AssemblyPaths = result;

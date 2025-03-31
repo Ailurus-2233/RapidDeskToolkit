@@ -21,27 +21,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <EmbeddedResource Update="Resources\Language.resx">
-        <Generator>ResXFileCodeGenerator</Generator>
-        <LastGenOutput>Language.Designer.cs</LastGenOutput>
-      </EmbeddedResource>
-      <EmbeddedResource Update="Resources\Language.en.resx">
-        <DependentUpon>Language.resx</DependentUpon>
-      </EmbeddedResource>
-      <EmbeddedResource Update="Resources\Language.zh.resx">
-        <DependentUpon>Language.resx</DependentUpon>
-      </EmbeddedResource>
-    </ItemGroup>
-
-    <ItemGroup>
-      <Compile Update="Resources\Language.Designer.cs">
-        <DesignTime>True</DesignTime>
-        <AutoGen>True</AutoGen>
-        <DependentUpon>Language.resx</DependentUpon>
-      </Compile>
-    </ItemGroup>
-
-    <ItemGroup>
       <None Remove="Resources\favicon.ico" />
       <AvaloniaResource Include="Resources\favicon.ico" />
     </ItemGroup>
@@ -52,6 +31,20 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Controls\" />
+      <EmbeddedResource Update="I18n\Language.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Language.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="I18n\Language.zh.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Language.zh.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Pages\Views\OverviewPage.axaml.cs">
+        <DependentUpon>OverviewPage.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
     </ItemGroup>
 </Project>

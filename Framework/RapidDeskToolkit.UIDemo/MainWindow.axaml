@@ -35,7 +35,7 @@
             <Grid ColumnDefinitions="*,*,*">
                 <TextBlock Grid.Column="1" Text="{Binding Header}" Margin="5 0 0 0 " TextAlignment="Center" />
                 <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right">
-                    <controls:ThemeSwitchButton  Width="45" Height="20" CornerRadius="25" />
+                    <controls:ThemeSwitchButton Width="45" Height="20" CornerRadius="25" />
                 </StackPanel>
             </Grid>
         </Border>
@@ -57,5 +57,13 @@
                 <UserControl Content="{Binding SelectedControl }" Margin="5" />
             </Border>
         </Grid>
+        <Canvas Grid.Row="1">
+            <Button Theme="{DynamicResource SolidButton}" Classes="Tertiary"
+                    Width="32" Height="32" Canvas.Right="10" Canvas.Bottom="10"
+                    CornerRadius="16" Command="{Binding ChangeLanguage}">
+                <PathIcon Theme="{DynamicResource InnerPathIcon}" Width="24" Height="24"
+                          Data="{StaticResource SemiIconLanguage}" />
+            </Button>
+        </Canvas>
     </Grid>
 </Window>

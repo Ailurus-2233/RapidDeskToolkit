@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="WindowTitle" xml:space="preserve">
+        <value>UI样例</value>
+    </data>
+    <data name="OverviewDescriptionParagraph1" xml:space="preserve">
+        <value>RapidDeskToolkit 是个人开发一个基于 AvaloniaUI 的桌面应用程序开发工具包，方便个人快速的开发一款桌面应用程序。</value>
+    </data>
+    <data name="OverviewDescriptionParagraph2" xml:space="preserve">
+        <value>UI方面，使用了 Semi.Avalonia 和 Ursa.Avalonia 两个库，这个用例将描述在开发过程中如何使用这些主题。</value>
+    </data>
+    <data name="OverviewPageTitle" xml:space="preserve">
+        <value>总览</value>
+    </data>
+    <data name="OverviewPage_Content_HowToUse" xml:space="preserve">
+        <value>如何使用</value>
+    </data>
+    <data name="OverviewPage_Content_LoadStyles" xml:space="preserve">
+        <value>加载样式</value>
+    </data>
+    <data name="OverviewPage_Content_AddDependencies" xml:space="preserve">
+        <value>增加依赖项</value>
+    </data>
+    <data name="OverviewPage_Content_Example" xml:space="preserve">
+        <value>UI样例</value>
+    </data>
+</root>
