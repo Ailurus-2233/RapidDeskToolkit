@@ -6,7 +6,6 @@ using Avalonia.Controls;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using RapidDeskToolkit.Common.Container;
-using RapidDeskToolkit.Common.LanguageManager;
 using RapidDeskToolkit.UIDemo.Pages;
 using RapidDeskToolkit.UIDemo.Pages.ViewModels;
 
@@ -25,7 +24,7 @@ public partial class MainWindowViewModel : ObservableObject
     private UserControl? _selectedControl;
 
     public string Header =>
-        LanguageManager.GetString("WindowTitle") + (SelectedPage is null ? string.Empty : $" - {SelectedPage.Title}");
+        Resources.Language.MainWindow_Title + (SelectedPage is null ? string.Empty : $" - {SelectedPage.Title}");
 
     private static readonly string[] SupportedLanguages = ["en", "zh-CN"];
     private static int LanguageIndex;
@@ -33,38 +32,27 @@ public partial class MainWindowViewModel : ObservableObject
     public MainWindowViewModel()
     {
         SelectedPage = Pages.FirstOrDefault();
-        var culture = LanguageManager.GetCurrentCulture();
+        var culture = CultureInfo.CurrentCulture;
         LanguageIndex = Array.IndexOf(SupportedLanguages, culture.Name);
-        LanguageManager.LanguageChanged += OnLanguageChanged;
-    }
-
-    private void OnLanguageChanged()
-    {
-        NotifyAllProperties();
     }
 
     partial void OnSelectedPageChanged(IPage? value)
     {
         SelectedControl = value?.GetUserControl();
-        NotifyAllProperties();
+        OnPropertyChanged(nameof(Header));
     }
 
     [RelayCommand]
     public void OnLoadedCommand()
     {
         Pages.Add(IoC.GetInstance<OverviewPageViewModel>()!);
-        NotifyAllProperties();
-    }
-
-    private void NotifyAllProperties()
-    {
         OnPropertyChanged(nameof(Header));
     }
+
 
     [RelayCommand]
     public void ChangeLanguage()
     {
         LanguageIndex = (LanguageIndex + 1) % SupportedLanguages.Length;
-        LanguageManager.SetCurrentCulture(new CultureInfo(SupportedLanguages[LanguageIndex]));
     }
 }

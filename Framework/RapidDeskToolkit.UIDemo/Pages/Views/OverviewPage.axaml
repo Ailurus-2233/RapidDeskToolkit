@@ -3,6 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewModels="clr-namespace:RapidDeskToolkit.UIDemo.Pages.ViewModels"
+             xmlns:resources="clr-namespace:RapidDeskToolkit.UIDemo.Resources"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="RapidDeskToolkit.UIDemo.Pages.Views.OverviewPage"
              x:DataType="viewModels:OverviewPageViewModel">
@@ -22,34 +23,37 @@
             <TextBlock
                 HorizontalAlignment="Center"
                 Classes="H1"
-                Text="{Binding Title}"
+                Text="{x:Static resources:Language.OverviewPage_Title}"
                 Theme="{DynamicResource TitleTextBlock}" />
             <TextBlock
                 Margin="0,20,0,0"
                 HorizontalAlignment="Center"
                 Classes="Secondary"
-                Text="{Binding Description}"
+                Text="{x:Static resources:Language.OverviewPage_DescriptionParagraph}"
                 TextWrapping="Wrap"
                 MaxWidth="800" />
             <TabControl Padding="8" MaxWidth="800" Margin="0,20,0,0">
-                <TabItem Header="{Binding HowToUse}" FontSize="16">
+                <TabItem Header="{x:Static resources:Language.OverviewPage_Content_HowToUse}" FontSize="16">
                     <StackPanel>
-                        <TextBlock Text="{Binding AddDependencies}" Classes="H6"
+                        <TextBlock Text="{x:Static resources:Language.OverviewPage_Content_AddDependencies}"
+                                   Classes="H6"
                                    Theme="{StaticResource TitleTextBlock}" />
                         <Border Margin="0,8" Classes="CodeBlock">
-                            <SelectableTextBlock FontFamily="Consolas" Text="{Binding NeedProjects}" />
+                            <SelectableTextBlock FontFamily="Consolas"
+                                                 Text="RapidDeskToolkit&#x0a;RapidDeskToolkit.UIPackage" />
                         </Border>
-                        <TextBlock Text="{Binding LoadStyles}" Classes="H6"
+                        <TextBlock Text="{x:Static resources:Language.OverviewPage_Content_LoadStyles}" Classes="H6"
                                    Theme="{StaticResource TitleTextBlock}" />
                         <Border Margin="0,8" Classes="CodeBlock">
                             <SelectableTextBlock
                                 FontFamily="Consolas"
-                                Text="{Binding StylesName}"
-                                TextWrapping="Wrap" />
+                                Text="&lt;!-- App.axaml --&gt;&#x0a;&lt;Styles&gt;&#x0a;&#x09;...&#x0a;&#x09;&lt;uiPackage:Generic /&gt;&#x0a;&#x09;...&#x0a;&lt;/Styles&gt;"
+                                TextWrapping="Wrap">
+                            </SelectableTextBlock>
                         </Border>
                     </StackPanel>
                 </TabItem>
-                <TabItem Header="{Binding Example}" FontSize="16">
+                <TabItem Header="{x:Static resources:Language.OverviewPage_Content_Example}" FontSize="16">
                     <StackPanel HorizontalAlignment="Center">
                         <StackPanel>
                             <StackPanel Orientation="Horizontal">
@@ -120,27 +124,33 @@
                                         <MenuItem Header="Menu 3" />
                                     </Menu>
                                 </StackPanel>
-
-                                <Calendar Margin="16,0" Width="300" />
-                                <StackPanel Margin="16,0">
-                                    <TextBox
-                                        Width="300"
-                                        Margin="0,12"
-                                        InnerLeftContent="https://"
-                                        InnerRightContent=".com" />
-                                    <DatePicker Width="300" Margin="0,12" />
-                                    <CalendarDatePicker Width="300" Margin="0,12" />
-                                    <NumericUpDown Width="300" Margin="0,12" />
-                                    <ComboBox Width="300" Margin="0,12">
-                                        <ComboBoxItem>Avalonia</ComboBoxItem>
-                                        <ComboBoxItem>Semi Design</ComboBoxItem>
-                                        <ComboBoxItem>IRIHI Technology</ComboBoxItem>
-                                        <ComboBoxItem>RapidDeskToolkit</ComboBoxItem>
-                                    </ComboBox>
-                                </StackPanel>
-                            </StackPanel>
-                            <StackPanel Orientation="Horizontal">
-                                <ColorView Width="250" Name="Test" ColorSpectrumShape="Ring" />
+                                <WrapPanel Width="200" Margin="8">
+                                    <WrapPanel.Styles>
+                                        <Style Selector="Label">
+                                            <Setter Property="Margin" Value="4" />
+                                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                        </Style>
+                                    </WrapPanel.Styles>
+                                    <Label Classes="Red" Theme="{StaticResource TagLabel}">Red</Label>
+                                    <Label Classes="Pink" Theme="{StaticResource TagLabel}">Pink</Label>
+                                    <Label Classes="Purple" Theme="{StaticResource TagLabel}">Purple</Label>
+                                    <Label Classes="Violet" Theme="{StaticResource TagLabel}">Violet</Label>
+                                    <Label Classes="Indigo" Theme="{StaticResource TagLabel}">Indigo</Label>
+                                    <Label Classes="Blue" Theme="{StaticResource TagLabel}">Blue</Label>
+                                    <Label Classes="LightBlue" Theme="{StaticResource TagLabel}">LightBlue</Label>
+                                    <Label Classes="Cyan" Theme="{StaticResource TagLabel}">Cyan</Label>
+                                    <Label Classes="Teal" Theme="{StaticResource TagLabel}">Teal</Label>
+                                    <Label Classes="Green" Theme="{StaticResource TagLabel}">Green</Label>
+                                    <Label Classes="LightGreen" Theme="{StaticResource TagLabel}">LightGreen</Label>
+                                    <Label Classes="Lime" Theme="{StaticResource TagLabel}">Lime</Label>
+                                    <Label Classes="Yellow" Theme="{StaticResource TagLabel}">Yellow</Label>
+                                    <Label Classes="Amber" Theme="{StaticResource TagLabel}">Amber</Label>
+                                    <Label Classes="Orange" Theme="{StaticResource TagLabel}">Orange</Label>
+                                    <Label Classes="Grey" Theme="{StaticResource TagLabel}">Grey</Label>
+                                    <Label Classes="White" Theme="{StaticResource TagLabel}">White</Label>
+                                    <Label Classes="Large" Theme="{StaticResource TagLabel}">Large</Label>
+                                    <Label Classes="Circle" Theme="{StaticResource TagLabel}">Circle</Label>
+                                </WrapPanel>
                                 <StackPanel Width="250" Margin="8">
                                     <StackPanel Orientation="Horizontal">
                                         <Slider Name="Slider"
@@ -168,34 +178,27 @@
                                             Value="{Binding #Slider.Value}" />
                                     </UniformGrid>
                                 </StackPanel>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <ColorView Width="250" Name="Test" ColorSpectrumShape="Ring" />
+                                <StackPanel Margin="16,0">
+                                    <TextBox
+                                        Width="200"
+                                        Margin="0,12"
+                                        InnerLeftContent="https://"
+                                        InnerRightContent=".com" />
+                                    <DatePicker Width="200" Margin="0,12" MonthVisible="False" DayVisible="False" />
+                                    <CalendarDatePicker Width="200" Margin="0,12" />
+                                    <NumericUpDown Width="200" Margin="0,12" />
+                                    <ComboBox Width="200" Margin="0,12">
+                                        <ComboBoxItem>Avalonia</ComboBoxItem>
+                                        <ComboBoxItem>Semi Design</ComboBoxItem>
+                                        <ComboBoxItem>IRIHI Technology</ComboBoxItem>
+                                        <ComboBoxItem>RapidDeskToolkit</ComboBoxItem>
+                                    </ComboBox>
+                                </StackPanel>
                                 <StackPanel Margin="8">
-                                    <WrapPanel Width="280">
-                                        <WrapPanel.Styles>
-                                            <Style Selector="Label">
-                                                <Setter Property="Margin" Value="4" />
-                                                <Setter Property="HorizontalContentAlignment" Value="Center" />
-                                            </Style>
-                                        </WrapPanel.Styles>
-                                        <Label Classes="Red" Theme="{StaticResource TagLabel}">Red</Label>
-                                        <Label Classes="Pink" Theme="{StaticResource TagLabel}">Pink</Label>
-                                        <Label Classes="Purple" Theme="{StaticResource TagLabel}">Purple</Label>
-                                        <Label Classes="Violet" Theme="{StaticResource TagLabel}">Violet</Label>
-                                        <Label Classes="Indigo" Theme="{StaticResource TagLabel}">Indigo</Label>
-                                        <Label Classes="Blue" Theme="{StaticResource TagLabel}">Blue</Label>
-                                        <Label Classes="LightBlue" Theme="{StaticResource TagLabel}">LightBlue</Label>
-                                        <Label Classes="Cyan" Theme="{StaticResource TagLabel}">Cyan</Label>
-                                        <Label Classes="Teal" Theme="{StaticResource TagLabel}">Teal</Label>
-                                        <Label Classes="Green" Theme="{StaticResource TagLabel}">Green</Label>
-                                        <Label Classes="LightGreen" Theme="{StaticResource TagLabel}">LightGreen</Label>
-                                        <Label Classes="Lime" Theme="{StaticResource TagLabel}">Lime</Label>
-                                        <Label Classes="Yellow" Theme="{StaticResource TagLabel}">Yellow</Label>
-                                        <Label Classes="Amber" Theme="{StaticResource TagLabel}">Amber</Label>
-                                        <Label Classes="Orange" Theme="{StaticResource TagLabel}">Orange</Label>
-                                        <Label Classes="Grey" Theme="{StaticResource TagLabel}">Grey</Label>
-                                        <Label Classes="White" Theme="{StaticResource TagLabel}">White</Label>
-                                        <Label Classes="Large" Theme="{StaticResource TagLabel}">Large</Label>
-                                        <Label Classes="Circle" Theme="{StaticResource TagLabel}">Circle</Label>
-                                    </WrapPanel>
+                                    <Calendar Margin="8,0" Width="240" />
                                 </StackPanel>
                             </StackPanel>
                         </StackPanel>

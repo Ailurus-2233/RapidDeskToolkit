@@ -18,16 +18,13 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-    <data name="WindowTitle" xml:space="preserve">
+    <data name="MainWindow_Title" xml:space="preserve">
         <value>UIDemo</value>
     </data>
-    <data name="OverviewDescriptionParagraph1" xml:space="preserve">
-        <value>RapidDeskToolkit is an AvaloniaUI-based desktop application development kit that allows you to quickly develop desktop applications.</value>
+    <data name="OverviewPage_DescriptionParagraph" xml:space="preserve">
+        <value>RapidDeskToolkit is an AvaloniaUI-based desktop application development kit that allows you to quickly develop desktop applications.On the UI side, semi. Avalonia and Ursa. Avalonia two libraries, this use case will describe how to use these topics during development.</value>
     </data>
-    <data name="OverviewDescriptionParagraph2" xml:space="preserve">
-        <value>On the UI side, semi. Avalonia and Ursa. Avalonia two libraries, this use case will describe how to use these topics during development.</value>
-    </data>
-    <data name="OverviewPageTitle" xml:space="preserve">
+    <data name="OverviewPage_Title" xml:space="preserve">
         <value>Overview</value>
     </data>
     <data name="OverviewPage_Content_HowToUse" xml:space="preserve">

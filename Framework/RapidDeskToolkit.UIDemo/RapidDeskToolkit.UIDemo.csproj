@@ -31,12 +31,12 @@
     </ItemGroup>
 
     <ItemGroup>
-      <EmbeddedResource Update="I18n\Language.resx">
-        <Generator>ResXFileCodeGenerator</Generator>
+      <EmbeddedResource Update="Resources\Language.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
         <LastGenOutput>Language.Designer.cs</LastGenOutput>
       </EmbeddedResource>
-      <EmbeddedResource Update="I18n\Language.zh.resx">
-        <Generator>ResXFileCodeGenerator</Generator>
+      <EmbeddedResource Update="Resources\Language.zh.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
         <LastGenOutput>Language.zh.Designer.cs</LastGenOutput>
       </EmbeddedResource>
     </ItemGroup>
@@ -45,6 +45,11 @@
       <Compile Update="Pages\Views\OverviewPage.axaml.cs">
         <DependentUpon>OverviewPage.axaml</DependentUpon>
         <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Resources\Language.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Language.resx</DependentUpon>
       </Compile>
     </ItemGroup>
 </Project>
