@@ -23,26 +23,27 @@
             <TextBlock
                 HorizontalAlignment="Center"
                 Classes="H1"
-                Text="{x:Static resources:Language.OverviewPage_Title}"
+                Text="{I18N {x:Static resources:LangKeys.OverviewPage_Title}}"
                 Theme="{DynamicResource TitleTextBlock}" />
             <TextBlock
                 Margin="0,20,0,0"
                 HorizontalAlignment="Center"
                 Classes="Secondary"
-                Text="{x:Static resources:Language.OverviewPage_DescriptionParagraph}"
+                Text="{I18N {x:Static resources:LangKeys.OverviewPage_DescriptionParagraph}}"
                 TextWrapping="Wrap"
                 MaxWidth="800" />
             <TabControl Padding="8" MaxWidth="800" Margin="0,20,0,0">
-                <TabItem Header="{x:Static resources:Language.OverviewPage_Content_HowToUse}" FontSize="16">
+                <TabItem Header="{I18N {x:Static resources:LangKeys.OverviewPage_Content_HowToUse}}" FontSize="16">
                     <StackPanel>
-                        <TextBlock Text="{x:Static resources:Language.OverviewPage_Content_AddDependencies}"
+                        <TextBlock Text="{I18N {x:Static resources:LangKeys.OverviewPage_Content_AddDependencies}}"
                                    Classes="H6"
                                    Theme="{StaticResource TitleTextBlock}" />
                         <Border Margin="0,8" Classes="CodeBlock">
                             <SelectableTextBlock FontFamily="Consolas"
                                                  Text="RapidDeskToolkit&#x0a;RapidDeskToolkit.UIPackage" />
                         </Border>
-                        <TextBlock Text="{x:Static resources:Language.OverviewPage_Content_LoadStyles}" Classes="H6"
+                        <TextBlock Text="{I18N {x:Static resources:LangKeys.OverviewPage_Content_LoadStyles}}"
+                                   Classes="H6"
                                    Theme="{StaticResource TitleTextBlock}" />
                         <Border Margin="0,8" Classes="CodeBlock">
                             <SelectableTextBlock
@@ -53,7 +54,7 @@
                         </Border>
                     </StackPanel>
                 </TabItem>
-                <TabItem Header="{x:Static resources:Language.OverviewPage_Content_Example}" FontSize="16">
+                <TabItem Header="{I18N {x:Static resources:LangKeys.OverviewPage_Content_Example}}" FontSize="16">
                     <StackPanel HorizontalAlignment="Center">
                         <StackPanel>
                             <StackPanel Orientation="Horizontal">

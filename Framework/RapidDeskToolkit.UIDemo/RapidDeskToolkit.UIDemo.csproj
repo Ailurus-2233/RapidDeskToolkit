@@ -38,6 +38,7 @@
       <EmbeddedResource Update="Resources\Language.zh.resx">
         <Generator>PublicResXFileCodeGenerator</Generator>
         <LastGenOutput>Language.zh.Designer.cs</LastGenOutput>
+        <DependentUpon>Language.resx</DependentUpon>
       </EmbeddedResource>
     </ItemGroup>
 

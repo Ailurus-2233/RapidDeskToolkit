@@ -3,6 +3,7 @@ using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Linq;
 using Avalonia.Controls;
+using Avalonia.Markup.Xaml.MarkupExtensions;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using RapidDeskToolkit.Common.Container;
@@ -24,7 +25,7 @@ public partial class MainWindowViewModel : ObservableObject
     private UserControl? _selectedControl;
 
     public string Header =>
-        Resources.Language.MainWindow_Title + (SelectedPage is null ? string.Empty : $" - {SelectedPage.Title}");
+        Resources.LangKeys.MainWindow_Title + (SelectedPage is null ? string.Empty : $" - {SelectedPage.Title}");
 
     private static readonly string[] SupportedLanguages = ["en", "zh-CN"];
     private static int LanguageIndex;
@@ -54,5 +55,8 @@ public partial class MainWindowViewModel : ObservableObject
     public void ChangeLanguage()
     {
         LanguageIndex = (LanguageIndex + 1) % SupportedLanguages.Length;
+        var culture = new CultureInfo(SupportedLanguages[LanguageIndex]);
+        I18NExtension.Culture = culture;
+        CultureInfo.CurrentCulture = culture;
     }
 }
