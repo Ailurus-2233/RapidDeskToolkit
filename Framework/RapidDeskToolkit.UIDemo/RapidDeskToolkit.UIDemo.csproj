@@ -26,8 +26,8 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\RapidDeskToolkit.Desktop\RapidDeskToolkit.Desktop.csproj" />
       <ProjectReference Include="..\RapidDeskToolkit.UIPackage\RapidDeskToolkit.UIPackage.csproj" />
-      <ProjectReference Include="..\RapidDeskToolkit\RapidDeskToolkit.csproj" />
     </ItemGroup>
 
     <ItemGroup>

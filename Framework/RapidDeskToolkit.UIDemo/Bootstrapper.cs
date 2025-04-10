@@ -1,4 +1,4 @@
-﻿using RapidDeskToolkit.Common.Bootstrapper;
+﻿using RapidDeskToolkit.Desktop.Bootstrapper;
 
 namespace RapidDeskToolkit.UIDemo;
 

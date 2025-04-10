@@ -1,8 +1,8 @@
-﻿using RapidDeskToolkit.Common.Language;
+﻿using RapidDeskToolkit.SourceGenerator.LanguageResources;
 
 namespace RapidDeskToolkit.UIDemo.Resources;
 
-[LanguageKeysOf(typeof(Language))]
+[LanguageTarget(typeof(Language))]
 public partial class LangKeys
 {
 
