@@ -2,10 +2,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:viewModels="clr-namespace:RapidDeskToolkit.UIDemo.Pages.ViewModels"
              xmlns:resources="clr-namespace:RapidDeskToolkit.UIDemo.Resources"
+             xmlns:viewModels="clr-namespace:RapidDeskToolkit.UIDemo.Page.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="RapidDeskToolkit.UIDemo.Pages.Views.OverviewPage"
+             x:Class="RapidDeskToolkit.UIDemo.Page.Views.OverviewPage"
              x:DataType="viewModels:OverviewPageViewModel">
     <UserControl.Styles>
         <Style Selector="Border.CodeBlock">
@@ -23,26 +23,26 @@
             <TextBlock
                 HorizontalAlignment="Center"
                 Classes="H1"
-                Text="{I18N {x:Static resources:LangKeys.OverviewPage_Title}}"
+                Text="{x:Static resources:Language.OverviewPage_Title}"
                 Theme="{DynamicResource TitleTextBlock}" />
             <TextBlock
                 Margin="0,20,0,0"
                 HorizontalAlignment="Center"
                 Classes="Secondary"
-                Text="{I18N {x:Static resources:LangKeys.OverviewPage_DescriptionParagraph}}"
+                Text="{x:Static resources:Language.OverviewPage_DescriptionParagraph}"
                 TextWrapping="Wrap"
                 MaxWidth="800" />
             <TabControl Padding="8" MaxWidth="800" Margin="0,20,0,0">
-                <TabItem Header="{I18N {x:Static resources:LangKeys.OverviewPage_Content_HowToUse}}" FontSize="16">
+                <TabItem Header="{x:Static resources:Language.OverviewPage_Content_HowToUse}" FontSize="16">
                     <StackPanel>
-                        <TextBlock Text="{I18N {x:Static resources:LangKeys.OverviewPage_Content_AddDependencies}}"
+                        <TextBlock Text="{x:Static resources:Language.OverviewPage_Content_AddDependencies}"
                                    Classes="H6"
                                    Theme="{StaticResource TitleTextBlock}" />
                         <Border Margin="0,8" Classes="CodeBlock">
                             <SelectableTextBlock FontFamily="Consolas"
                                                  Text="RapidDeskToolkit&#x0a;RapidDeskToolkit.UIPackage" />
                         </Border>
-                        <TextBlock Text="{I18N {x:Static resources:LangKeys.OverviewPage_Content_LoadStyles}}"
+                        <TextBlock Text="{x:Static resources:Language.OverviewPage_Content_LoadStyles}"
                                    Classes="H6"
                                    Theme="{StaticResource TitleTextBlock}" />
                         <Border Margin="0,8" Classes="CodeBlock">
@@ -54,7 +54,7 @@
                         </Border>
                     </StackPanel>
                 </TabItem>
-                <TabItem Header="{I18N {x:Static resources:LangKeys.OverviewPage_Content_Example}}" FontSize="16">
+                <TabItem Header="{x:Static resources:Language.OverviewPage_Content_Example}" FontSize="16">
                     <StackPanel HorizontalAlignment="Center">
                         <StackPanel>
                             <StackPanel Orientation="Horizontal">

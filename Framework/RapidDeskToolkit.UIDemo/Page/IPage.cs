@@ -1,6 +1,6 @@
 ﻿using Avalonia.Controls;
 
-namespace RapidDeskToolkit.UIDemo.Pages;
+namespace RapidDeskToolkit.UIDemo.Page;
 
 public interface IPage
 {

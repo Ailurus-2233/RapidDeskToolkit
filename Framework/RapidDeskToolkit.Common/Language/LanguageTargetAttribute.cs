@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace RapidDeskToolkit.SourceGenerator.LanguageResources;
+﻿namespace RapidDeskToolkit.Common.Language;
 
 [AttributeUsage(AttributeTargets.Class, Inherited = false)]
 public class LanguageTargetAttribute(Type targetDesignerType) : Attribute

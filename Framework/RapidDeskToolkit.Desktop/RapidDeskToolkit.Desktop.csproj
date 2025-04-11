@@ -4,12 +4,14 @@
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <LangVersion>default</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\RapidDeskToolkit.Common\RapidDeskToolkit.Common.csproj" />
-      <ProjectReference Include="..\RapidDeskToolkit.SourceGenerator\RapidDeskToolkit.SourceGenerator\RapidDeskToolkit.SourceGenerator.csproj" />
-      <ProjectReference Include="..\RapidDeskToolkit\RapidDeskToolkit.csproj" />
+        <ProjectReference Include="..\RapidDeskToolkit.Common\RapidDeskToolkit.Common.csproj"/>
+        <ProjectReference Include="..\RapidDeskToolkit.SourceGenerator\RapidDeskToolkit.SourceGenerator.csproj"
+                          OutputItemType="Analyzer" ReferenceOutputAssembly="false"/>
+        <ProjectReference Include="..\RapidDeskToolkit\RapidDeskToolkit.csproj"/>
     </ItemGroup>
 
 </Project>

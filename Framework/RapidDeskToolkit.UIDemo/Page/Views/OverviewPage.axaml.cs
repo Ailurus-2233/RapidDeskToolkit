@@ -1,6 +1,6 @@
 ﻿using Avalonia.Controls;
 
-namespace RapidDeskToolkit.UIDemo.Pages.Views;
+namespace RapidDeskToolkit.UIDemo.Page.Views;
 
 public partial class OverviewPage : UserControl
 {
